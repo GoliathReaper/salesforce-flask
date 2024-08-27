@@ -4,9 +4,9 @@ import os
 
 load_dotenv()
 
-username = os.getenv('USERNAME')
+username = os.getenv('USER')
 password = os.getenv('PASSWORD')
-security_token = os.getenv('SECURITY_TOKEN')
+security_token = os.getenv('SECRET_TOKEN')
 
 # Create a new Salesforce session
 sf = Salesforce(username=username, password=password, security_token=security_token)
