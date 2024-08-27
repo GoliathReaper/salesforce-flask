@@ -25,10 +25,9 @@ sf = Salesforce(username=username, password=password, security_token=security_to
 #     print(record)
 
 def objects() -> list:
-    # Describe Global to list all objects available in Salesforce
+
     all_objects = sf.describe()
 
-    # Extracting standard objects by checking if they do not start with a custom prefix
     standard_objects = [obj['name'] for obj in all_objects['sobjects'] if not obj['custom']]
 
     # print(all_objects)
