@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <meta charset="UTF-8">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sales Force API</title>
+    <script src="{{ url_for('static', filename='index.js') }}"></script>
+</head>
+<div class="blob"></div>
+<body>
+    <div class="main">
+        <h1>Sales Force API</h1>
+        <div class="type">
+            <h3>Type</h3>
+            <!-- radio button Custom -->
+            <label for="custom">Custom</label>
+            <input id="custom" type="radio" name="radio" value="custom">
+            <!-- radio button Standard -->
+            <label for="standard">Standard</label>
+            <input id="standard" type="radio" name="radio" value="standard">
+            <hr>
+        </div>
+
+        <div class="endpoint">
+            <h3>API Endpoint</h3>
+            <input type="text" id="textbox"><br><br>
+            <hr>
+        </div>
+
+        <div class="Object">
+            <h3>Object</h3>
+                <select onchange="selectedSubjectName()" name="options" id="options">
+                    <option value="">Select</option>
+                    {% for obj in standard_objects %}
+                        <option value="{{ obj }}">{{ obj }}</option>
+                    {% endfor %}
+                </select>
+            <br>
+            <br>
+            <hr>
+            <div class="button">
+                <button value="send" onclick="sendRequest()">Send Request</button>
+            </div>
+
+
+        </div>
+    </div>
+
+</body>
+</html>
